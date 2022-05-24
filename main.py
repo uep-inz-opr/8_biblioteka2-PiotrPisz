@@ -57,14 +57,15 @@ class Ksiazka:
                         Ksiazka.ksiazki.append([nazwa, tworca, 1])
                         
             else:
-                Ksiazka.ksiazki.append([nazwa, tworca, 1])      
+                Ksiazka.ksiazki.append([nazwa, tworca, 1]) 
+            return True     
 
 class Egzemplarz():
     def __init__(self, tytul, autor, rok):
         self.rok = rok
         self.tytul = tytul
         self.autor = autor
-        Ksiazka.sprawdz_ksiazke(self.tytul, self.autor)
+        print(Ksiazka.sprawdz_ksiazke(self.tytul, self.autor))
 
         
     def __repr__(self):
@@ -77,9 +78,9 @@ for i in range(n):
     if x[0] == "dodaj":
         Egzemplarz(x[1],x[2],x[3])
     elif x[0] == "wypozycz":
-        Biblioteka.wypozycz(x[2],x[1])
+        print(Biblioteka.wypozycz(x[2],x[1]))
     elif x[0] == "oddaj":
-        Biblioteka.oddaj(x[2],x[1])
+        print(Biblioteka.oddaj(x[2],x[1]))
 # Ksiazka.ksiazki = sorted(Ksiazka.ksiazki, key=lambda x: x[0])
 # # for i in range(len(Ksiazka.ksiazki)):
 # #     print(Ksiazka(Ksiazka.ksiazki[i][0],Ksiazka.ksiazki[i][1],Ksiazka.ksiazki[i][2]))
